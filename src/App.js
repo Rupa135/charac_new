@@ -1,4 +1,4 @@
-import React from "react"
+import React , {Fragment} from "react"
 import "./App.css"
 import Connecting from "./components/Connecting";
 import Details from "./components/Details";
@@ -8,12 +8,12 @@ import NavBar from "./components/Navbar";
 const App = () => {
 
   return(
-      <React.Fragment>
+      <Fragment>
       <Routes>
         <Route path="/" element={<Connecting/>}/>
         <Route path="/details" element={<Details/>}/>
       </Routes>
-      </React.Fragment>
+      </Fragment>
     
   )
 }
