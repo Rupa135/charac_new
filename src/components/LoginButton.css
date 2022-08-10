@@ -1,0 +1,26 @@
+.loginButton {
+    font : inherit;
+    border: 1px solid rgb(34, 87, 219);
+    background: rgb(34, 87, 219);
+    color: white;
+    padding: 0.7rem 12rem;
+    font-size: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+h2 {
+     width:100%; 
+     text-align:center; 
+     border-bottom: 1px solid rgb(80, 75, 75); 
+     line-height:0.1em; 
+     margin:10px 0 20px;
+    } 
+
+h2 span { 
+    background:#fff;
+     padding:0 10px; 
+    }
+    
+

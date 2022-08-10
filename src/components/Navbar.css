@@ -1,0 +1,30 @@
+.navigation{
+    text-align: left;
+    margin: 1rem;
+    display: flex;
+    position: relative;
+    background: white;
+}
+
+.icon{
+    float: left;
+    color: rgb(242, 61, 133);
+}
+
+.heading {
+    font-size: 20px;
+    margin: 5px;
+    color: rgb(242, 61, 133);
+}
+
+a {
+    /* margin-right: 500px; */
+    text-decoration: none;
+    position: absolute;
+    right: 0;
+    
+}
+
+a{
+    display: inline-block;
+}
