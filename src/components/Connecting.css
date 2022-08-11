@@ -2,6 +2,10 @@
     background-image :url("../images/bg_image.jpg");
     height: 100vh;
     padding: 1rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 .Card{
@@ -14,4 +18,11 @@
     margin: auto ;
     width: 50rem;
     text-align: center;
+  }
+
+  @media only screen and (max-width: 1005px) {
+    .Card{
+        max-width: fit-content;
+    }
+    
   }

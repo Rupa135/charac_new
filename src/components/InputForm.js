@@ -1,28 +1,39 @@
-import React , {useRef} from "react"
+import React , {useState} from "react"
 import {useNavigate} from "react-router-dom"
 import "./InputForm.css"
 
 
-const InputForm = (props) => {
+const InputForm = () => {
 
-    const firstNameRef = useRef()
-    const lastNameRef = useRef()
-    const numberRef = useRef()
-    const emailRef = useRef()
-    const passwordRef = useRef()
+    const[firstName , setFirstName] = useState()
+    const[lastName , setLastName] = useState()
+    const[number , setNumber] = useState()
+    const[email , setEmail] = useState()
+    const[password , setPassword] = useState()
+
 
     const enteredDetails = {}
-
     const navigate = useNavigate()
+
+    function debounce(callback, timeout = 500) {
+        let timer
+      
+        // inner function
+        return function (...args) {
+          clearTimeout(timer)
+          timer = setTimeout(() => callback.apply(this, args), timeout)
+        }
+      }
+      
 
     const submitHandler = (e) => {
         e.preventDefault()
 
-        enteredDetails.fname = firstNameRef.current.value
-        enteredDetails.lname = lastNameRef.current.value
-        enteredDetails.pNumber= numberRef.current.value
-        enteredDetails.enteredEmail = emailRef.current.value
-        enteredDetails.enteredPassword = passwordRef.current.value
+        enteredDetails.fname = firstName
+        enteredDetails.lname = lastName
+        enteredDetails.pNumber= number
+        enteredDetails.enteredEmail = email
+        enteredDetails.enteredPassword = password
 
         navigate("../details" , {replace : true})
 
@@ -37,7 +48,8 @@ const InputForm = (props) => {
                 <input 
                 type="text"
                 id="firstName"
-                ref={firstNameRef}
+                value={firstName}
+                onChange={debounce((e) => (setFirstName(e.target.value)))}
                 placeholder="First name"/> 
             </div>
 
@@ -46,7 +58,8 @@ const InputForm = (props) => {
                 <input 
                 type="text"
                 id="lastName"
-                ref={lastNameRef}
+                value={lastName}
+                onChange={debounce((e) => (setLastName(e.target.value)))}
                 placeholder="Last name"/> 
             </div>
 
@@ -55,7 +68,8 @@ const InputForm = (props) => {
                 <input 
                 type="number"
                 id="contactNumber"
-                ref={numberRef}
+                value={number}
+                onChange={debounce((e) => (setNumber(e.target.value)))}
                 placeholder="Contact Number"/> 
             </div>
 
@@ -64,7 +78,8 @@ const InputForm = (props) => {
                 <input 
                 type="email"
                 id="email"
-                ref={emailRef}
+                value={email}
+                onChange={debounce((e) => (setEmail(e.target.value)))}
                 placeholder="Email Address"/> 
             </div>
 
@@ -73,7 +88,8 @@ const InputForm = (props) => {
                 <input 
                 type="password"
                 id="password"
-                ref={passwordRef}
+                value={password}
+                onChange={debounce((e) => (setPassword(e.target.value)))}
                 placeholder="Password"/> 
             </div>
 
